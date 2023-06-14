@@ -4,7 +4,8 @@
   --second-color: #9fd3c7; 
   --third-color: #385170;
   --fourth-color: #142d4c;
-  --padding-container: 2rem 3rem;
+  --padding-container-mobile: 1rem 2rem;
+  --padding-container-desktop: 2rem 3rem;
   --padding-button: .75em 1.25em;
   --drop-shaddow: 0 0 8px rgba(0,0,0,.1);
 }
@@ -28,13 +29,13 @@ a:visited{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   align-content: center;
 }
 
 .main__header{
   background: white;
-  padding: var(--padding-container);
+  padding: var(--padding-container-mobile);
   border-bottom: 1px solid white;
   box-shadow: var(--drop-shaddow);
 }
@@ -54,10 +55,10 @@ a:visited{
 
 .main__content{
   text-align: center;
-  padding: var(--padding-container);
 }
 
 .main__content--button{
+  margin: 1rem 0;
   cursor: pointer;
   padding: var(--padding-button);
   background: none;
@@ -76,9 +77,8 @@ a:visited{
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
-  margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(5, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
   grid-auto-rows: 500px;
   /* grid-template-rows: auto;
   grid-auto-rows: max-content; */
@@ -104,10 +104,8 @@ a:visited{
   box-shadow: var(--drop-shaddow);
 }
 
-.book__card > img{
-  height: 100%;
-  width: 90%;
-  background-size: cover;
+ img{
+  width: 100%;
 }
 
 .book__card--image{
@@ -183,4 +181,20 @@ input[type="checkbox"]:checked{
 
 .active{
   display: block;
+}
+
+@media screen and (min-width: 792px){
+  .main__header{
+    padding: var(--padding-container-desktop);
+  }
+  .main__container{
+    justify-content: space-between;
+  }
+  .main__content--button{
+    margin: 2rem 0;
+  }
+
+  /* .books_container{
+    margin-top: 2rem;
+  } */
 }
