@@ -127,7 +127,7 @@ a:visited{
   top: 50%;
   left: 50%;
   width: 300px;
-  padding: var(--padding-container);
+  padding: var(--padding-container-desktop);
   text-align: center;
   border-radius: 6px;
   box-shadow: var(--drop-shaddow);
@@ -166,7 +166,7 @@ accent-color: white;
 }
 
 input[type="checkbox"]:checked{  
-  outline: 1px solid #9fd3c7;
+  outline: 2px solid #9fd3c7;
 }
 
 .overlay{

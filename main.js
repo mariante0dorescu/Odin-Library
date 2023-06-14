@@ -68,8 +68,8 @@ function createBookCard(book){
 
 function addBookFunction() {
   showModal();
-  form.removeEventListener('submit', handleSubmit);
-  form.addEventListener('submit', handleSubmit);
+  form.removeEventListener('submit', createBook);
+  form.addEventListener('submit', createBook);
 }
 
 function editBook(e){
@@ -91,8 +91,8 @@ function editBook(e){
  }
 }
 
-function handleSubmit(e) {
-  // e.preventDefault();
+function createBook(e) {
+  e.preventDefault();
   let book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked === true);
   books.push(book);
   createBookCard(book);
