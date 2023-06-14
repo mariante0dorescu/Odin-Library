@@ -26,7 +26,7 @@
   <main class="main__content">
       <button class="main__content--button" id="addBtn">+ ADD BOOK</button>
       <div class="books_container">
-        <div class="book__card" id="card">
+        <!-- <div class="book__card" id="card">
           <div class="book__card--image"><img src= "https://unsplash.it/300/300" /></div>
           <div class="book__card--info">
             <h2>Title: asdadadas daadsadas adsadasdsadasdas</h2>
@@ -35,21 +35,20 @@
             <button class="btn">READ</button>
             <button class="btn">DELETE</button>
           </div>
-        </div>
-
+        </div> -->
       </div> 
   </main>
   <div class="modal" id="bookModal">
-    <form action="#" class="add__book--form">
+    <form action="#" class="add__book--form" id="addBookForm">
       <h3>Add New Book</h3>
-      <input type="text" class="input" placeholder="Title" required maxlength="50">
-      <input type="text" class="input" placeholder="Author" required maxlength="50">
-      <input type="number" class="input" placeholder="Pages" required maxlength="50">
+      <input id="title" type="text" class="input" placeholder="Title" required minlength="3" maxlength="50">
+      <input id="author" type="text" class="input" placeholder="Author" required minlength="3"  maxlength="50">
+      <input id="pages"  type="number" class="input" placeholder="Pages" required max="2500">
       <div class="read">
         <label for="read">Have you read it?</label>
         <input type="checkbox" name="read" id="read">
       </div>
-      <button class="btn" type="submit">Add book</button>
+      <button class="btn" id="formSubmit" type="submit">Add book</button>
     </form>
   </div>
   <div class="overlay"></div>

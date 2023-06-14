@@ -6,7 +6,7 @@
   --fourth-color: #142d4c;
   --padding-container: 2rem 3rem;
   --padding-button: .75em 1.25em;
-  --drop-shaddow: 0 5px 5px rgba(0,0,0,.1);
+  --drop-shaddow: 0 0 8px rgba(0,0,0,.1);
 }
 
 body{
@@ -90,7 +90,14 @@ a:visited{
   padding: 1em;
   border-radius: 6px;
   padding: 1rem;
+  transform: translateY(5px);
   text-align: left;
+  transition: 0.3s ease-in;
+}
+
+.book__card:hover{
+  transform: translateY(-5px);
+  box-shadow: var(--drop-shaddow);
 }
 
 .book__card > img{
