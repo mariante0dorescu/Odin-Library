@@ -47,8 +47,8 @@ function createBookCard(book){
             <p>Pages: ${book.pages}</p>
           </div>
           <div class="book__card--controls">
-             <button id="read" class="btn">${book.status ? 'READ' : 'NOT READ'}</button>
-            <button id="delete" class="btn">DELETE</button>
+             <button id="read" class="btn ${book.status ? 'blue' : ''}">${book.status ? 'READ' : 'NOT READ'}</button>
+            <button id="delete" class="btn red">DELETE</button>
           </div>
   `
   booksContainer.appendChild(bookDiv);
@@ -81,7 +81,7 @@ function editBook(e){
    console.log('Button clicked:', button.id);
    console.log('Parent div ID:', divId);
    if(button.id === 'read') {
-
+    console.log(books.filter((book) => book.id === divId))
    }
    if(button.id === 'delete') {
     
@@ -104,6 +104,7 @@ addBookBtn.addEventListener("click", addBookFunction)
 overlay.addEventListener("click", closeModal)
 
 window.onload = function() {
+  booksContainer.innerHTML = "";
   for(const book of books){
     createBookCard(book);
     const bookCards = document.querySelectorAll('.book__card');

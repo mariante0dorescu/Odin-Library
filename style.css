@@ -4,9 +4,9 @@
   --second-color: #9fd3c7; 
   --third-color: #385170;
   --fourth-color: #142d4c;
-  --padding-container-mobile: 1rem 2rem;
-  --padding-container-desktop: 2rem 3rem;
-  --padding-button: .75em 1.25em;
+  --padding-container-mobile: 1rem 1.5rem;
+  --padding-container-desktop: 1.5rem 2rem;
+  --padding-button: .75em 1em;
   --drop-shaddow: 0 0 8px rgba(0,0,0,.1);
 }
 
@@ -55,6 +55,7 @@ a:visited{
 
 .main__content{
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .main__content--button{
@@ -71,6 +72,16 @@ a:visited{
 .main__content--button:hover{
   background: var(--second-color);
   color: white;
+}
+
+.blue{
+  background: var(--third-color);
+  color: #f3f3f3;
+}
+
+.red:hover{
+  background: red;
+  color: #f3f3f3;
 }
 
 .books_container{
