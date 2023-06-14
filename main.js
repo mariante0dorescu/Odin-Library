@@ -36,17 +36,20 @@ function showModal(){
 function createBookCard(book){
   const bookDiv = document.createElement('div')
   bookDiv.setAttribute('class','book__card');
-  bookDiv.setAttribute('id',`${book.id}`);
+  bookDiv.setAttribute('data-id',`${book.id}`);
   bookDiv.innerHTML = `
-          <div data-id="${book.id}" class="book__card--image">
+          <div class="book__card--image">
             <img src= "https://unsplash.it/300/300" />
           </div>
           <div class="book__card--info">
             <h2>Title: ${book.title}</h2>
             <p>Author: ${book.author}</p>
             <p>Pages: ${book.pages}</p>
-            <button id="read" class="btn">${book.status ? 'READ' : 'NOT READ'}</button>
+          </div>
+          <div class="book__card--controls">
+             <button id="read" class="btn">${book.status ? 'READ' : 'NOT READ'}</button>
             <button id="delete" class="btn">DELETE</button>
+          </div>
   `
   booksContainer.appendChild(bookDiv);
 }
@@ -70,11 +73,26 @@ function addBookFunction() {
 }
 
 function editBook(e){
-  console.log(e.target.id);
+  const button = e.target; 
+  const parentDiv = button.closest('.book__card');
+  const divId = parentDiv.dataset.id; 
+
+ if(button.id === 'delete' || button.id === "read") {
+   console.log('Button clicked:', button.id);
+   console.log('Parent div ID:', divId);
+   if(button.id === 'read') {
+
+   }
+   if(button.id === 'delete') {
+    
+   }
+ } else {
+  return;
+ }
 }
 
 function handleSubmit(e) {
-  e.preventDefault();
+  // e.preventDefault();
   let book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked === true);
   books.push(book);
   createBookCard(book);
