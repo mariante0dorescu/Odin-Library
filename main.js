@@ -101,12 +101,15 @@ function editBook(e){
 }
 
 function createBook(e) {
+ 
   e.preventDefault();
   let book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked === true);
   books.push(book);
   createBookCard(book);
   localStorage.setItem('books', JSON.stringify(books))
+  bookTitle.value = bookAuthor.value = bookPages.value = "";
   closeModal();
+  reloadPage();
 }
 
 function reloadPage() {
